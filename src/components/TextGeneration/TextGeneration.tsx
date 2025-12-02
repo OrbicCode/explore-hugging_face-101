@@ -1,14 +1,37 @@
 import { useState } from 'react';
+import { InferenceClient } from '@huggingface/inference';
 import styles from './TextGeneration.module.css';
 import Button from '../Button/Button';
 
-export default function TextGeneration() {
-  const [generatedText, setGeneratedText] = useState('');
+const hf = new InferenceClient(import.meta.env.VITE_HF_TOKEN);
 
-  function handleClick() {
-    setGeneratedText(
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id sem sodales, vulputate augue eget, dapibus elit. Mauris tortor elit, blandit et fermentum eget, pharetra sed lectus. Integer ac semper erat. Nunc molestie nisi dui, sed dignissim dui pellentesque eu. Duis rutrum purus id quam fringilla tincidunt. Morbi tempor nunc a luctus porttitor. Etiam ac efficitur tortor. Cras volutpat mauris et laoreet venenatis. Suspendisse accumsan eget lorem a suscipit. Suspendisse aliquam dictum nulla sit amet ultrices. Donec vulputate porta semper. Aliquam a mauris tellus. Donec finibus porta iaculis. Ut orci metus, euismod nec consectetur dictum, lacinia eget odio. Vestibulum vehicula tortor in nisi varius aliquet. Mauris vel tincidunt tellus.'
-    );
+export default function TextGeneration() {
+  const [generatedText, setGeneratedText] = useState<string | undefined>(undefined);
+
+  const messages = [
+    {
+      role: 'system',
+      content: 'You are an exper Haiku writer. /no_think',
+    },
+    {
+      role: 'user',
+      content: 'Can I have a haiku about Lord of the Rings?',
+    },
+  ];
+
+  async function handleClick() {
+    console.log('clicked');
+    try {
+      const response = await hf.chatCompletion({
+        model: 'HuggingFaceTB/SmolLM3-3B',
+        messages,
+        max_tokens: 50,
+      });
+      console.log(response.choices[0].message);
+      setGeneratedText(response.choices[0].message.content);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
