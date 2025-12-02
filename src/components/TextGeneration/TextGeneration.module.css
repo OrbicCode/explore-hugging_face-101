@@ -6,6 +6,6 @@
   margin: 0 auto;
   padding: 2em;
   width: 600px;
-  background: #f2cc8f;
+  background: var(--yellow);
   border-radius: 25px;
 }

@@ -1,0 +1,6 @@
+.button {
+  font-family: inherit;
+  background: var(--green);
+  padding: 1em 2em;
+  border: none;
+}

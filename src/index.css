@@ -1,4 +1,9 @@
 :root {
+  --off-whith: #f4f1de;
+  --dark-blue: #3d405b;
+  --light-red: #e07a5f;
+  --green: #81b29a;
+  --yellow: #f2cc8f;
 }
 
 * {
@@ -8,8 +13,8 @@
 body {
   font-family: 'Quicksand', sans-serif;
   margin: 0;
-  background: #f4f1de;
-  color: #3d405b;
+  background: var(--off-whith);
+  color: var(--dark-blue);
 }
 
 h1,
