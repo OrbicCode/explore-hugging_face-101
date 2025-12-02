@@ -1,5 +1,6 @@
 import './App.css';
 import ImageToImage from './components/ImageToImage/ImageToImage';
+import ObjectDetection from './components/ObjectDetection/ObjectDetection';
 import TextClassification from './components/TextClassification/TextClassification';
 import TextGeneration from './components/TextGeneration/TextGeneration';
 import TextToSpeech from './components/TextToSpeech/TextToSpeech';
@@ -13,6 +14,7 @@ function App() {
         <TextClassification />
         <TextToSpeech />
         <ImageToImage />
+        <ObjectDetection />
       </div>
     </main>
   );

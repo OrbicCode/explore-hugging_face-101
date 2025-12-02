@@ -32,7 +32,7 @@ export default function ImageToImage() {
       <div className={styles.imgWrapper}>
         <img src={seaside} />
       </div>
-      <Button onClick={handleClick} text='Image to Image' />
+      <Button onClick={handleClick} text='Generate Image' />
       <div className={styles.imgWrapper}>
         <img src={imageUrl && imageUrl} />
       </div>
