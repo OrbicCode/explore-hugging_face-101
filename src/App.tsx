@@ -5,7 +5,7 @@ function App() {
   return (
     <main>
       <h1>Explore Hugging Face 101</h1>
-      <div>
+      <div className='widget_container'>
         <TextGeneration />
       </div>
     </main>

@@ -1,12 +1,23 @@
+:root {
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  background: #f4f1de;
+  color: #3d405b;
 }
 
 h1,
 h2 {
   font-family: 'Rubik 80s Fade', system-ui;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 1em;
 }
